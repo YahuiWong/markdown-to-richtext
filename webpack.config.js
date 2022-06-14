@@ -2,13 +2,13 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const docsPath="../public/tools/markdown2richtext/";
 module.exports = {
     entry: {
         index: './src/js/index.js'
     },
     output: {
-        path: path.resolve(__dirname, 'docs/js/'),
+        path: path.resolve(__dirname, docsPath+'js/'),
         filename: '[name].js'
     },
     mode: 'production',
@@ -22,7 +22,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            './docs/*/*',
+            docsPath+'*/*',
             './index.html',
             './favicon.ico'
         ]),
